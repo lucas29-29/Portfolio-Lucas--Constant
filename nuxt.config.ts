@@ -37,6 +37,5 @@ export default defineNuxtConfig({
   },
   router: {
     base: '/Portfolio-Lucas--Constant/',
-
   },
 });
