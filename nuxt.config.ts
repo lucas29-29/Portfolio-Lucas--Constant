@@ -1,7 +1,7 @@
 import { defineNuxtConfig } from 'nuxt3';
 
 export default defineNuxtConfig({
-  ssr: false,
+  ssr: true,
   app: {
     pageTransition: { name: 'page', mode: 'out-in', appear: true },
   },
@@ -37,5 +37,6 @@ export default defineNuxtConfig({
   },
   router: {
     base: '/Portfolio-Lucas--Constant/',
+    fallback: true,
   },
 });
