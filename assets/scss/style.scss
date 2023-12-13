@@ -1,0 +1,93 @@
+@use "sass:color";
+
+// Fonts
+@font-face {
+  font-family: 'PP Formula Condensed';
+  font-style: normal;
+  font-weight: 300;
+  src: url("../fonts/PPFormulaCondensed-Light.woff2") format("woff2");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'PP Formula Condensed';
+  font-style: normal;
+  font-weight: bold;
+  src: url("../fonts/PPFormulaCondensed-Bold.woff2") format("woff2");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Strawford';
+  font-style: normal;
+  font-weight: 300;
+  src: url("../fonts/Strawford-Light.woff2") format("woff2");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Strawford';
+  font-style: normal;
+  font-weight: 400;
+  src: url("../fonts/Strawford-Regular.woff2") format("woff2");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Strawford';
+  font-style: normal;
+  font-weight: 500;
+  src: url("../fonts/Strawford-Medium.woff2") format("woff2");
+  font-display: swap;
+}
+
+// Colors
+$white: #FFFFFF;
+$green: #1EFDB3;
+$primary: #fd5623;
+$dark-primary: #569dff;
+$dark: #09223B;
+$dark-background: #061423;
+$light: #F6F9FC;
+$light-accent: #D7E5F2;
+$light-accent-rgb: 215, 229, 242;
+$dark-accent: #15243D;
+$dark-accent-rgb: 21, 36, 61;
+
+:root {
+  --primary: #{$primary};
+  --text: #{$dark};
+  --text-accent: #{color.adjust($dark, $lightness: +16%)};
+  --background: #{$light};
+  --accent: #{$light-accent};
+  --accent-rgb: #{$light-accent-rgb};
+}
+
+
+html[data-theme="dark"] {
+  --primary: #{color.adjust($primary, $lightness: +16%)};
+  --text: #{$light};
+  --text-accent: #{color.adjust($light, $lightness: -16%)};
+  --background: #{$dark-background};
+  --accent: #{$dark-accent};
+  --accent-rgb: #{$dark-accent-rgb};
+}
+
+// Breakpoints
+$md: 1024px;
+
+// Mixins
+@mixin transition($properties...) {
+  $transition-properties: '';
+
+  @each $property in $properties {
+    $transition-properties: #{$transition-properties}, #{$property} 0.3s ease-in-out;
+  }
+
+  transition: $transition-properties;
+}
+
+// Functions
+@function space($value) {
+  @return $value * 4px;
+}
