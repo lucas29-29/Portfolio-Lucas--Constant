@@ -36,6 +36,6 @@ export default defineNuxtConfig({
     provider: 'netlify',
   },
   router: {
-    base: 'pages\index.vue',
+    base: 'index.vue',
   },
 });
