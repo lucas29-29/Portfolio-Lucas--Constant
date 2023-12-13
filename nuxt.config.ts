@@ -1,3 +1,10 @@
+export default {
+  // ...
+  router: {
+    base: '/Portfolio-Lucas--Constant/'
+  },
+  // ...
+}
 export default defineNuxtConfig({
 	ssr: false,
 	app: {
